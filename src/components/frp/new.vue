@@ -81,7 +81,7 @@ const createCode = () => {
     ElMessage.warning('节点或带宽不能为空')
   }else{
     isCreating.value = ref(true)
-    axios.get(`/api?type=createCode&token=${GetCookie('token')}&node=${a.value}&date=${time.value}&band=${band.value}`)
+    axios.get(`https://panel.mossfrp.top/api?type=createCode&token=${GetCookie('token')}&node=${a.value}&date=${time.value}&band=${band.value}`)
     .then(function(Response){
       const ResponseCode = GetStatusCode(Response);
       if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -116,7 +116,7 @@ const createCode = () => {
   }
 }
 
-axios.get(`/api?type=userInfo&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=userInfo&token=${GetCookie('token')}`)
 .then(function(Response){
     const ResponseCode = GetStatusCode(Response);
     if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -133,7 +133,7 @@ axios.get(`/api?type=userInfo&token=${GetCookie('token')}`)
     }
 })
 
-axios.get(`/api?type=allNode&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=allNode&token=${GetCookie('token')}`)
 .then(function(Response){
   const ResponseCode = GetStatusCode(Response);
     if (isPassedVerifictionInt(ResponseCode,200) == true){

@@ -171,7 +171,7 @@ const buykey = () => {
 }
 
 const changeusername = () => {
-axios.get(`/api?type=infoUpdate&key=username&value=${usernamechange.value}&code=${verificationcode.value}&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=infoUpdate&key=username&value=${usernamechange.value}&code=${verificationcode.value}&token=${GetCookie('token')}`)
 .then(function(Response){
   const ResponseCode = GetStatusCode(Response);
   if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -201,7 +201,7 @@ axios.get(`/api?type=infoUpdate&key=username&value=${usernamechange.value}&code=
 })
 }
 const changeuserpassword = () => {
-axios.get(`/api?type=infoUpdate&key=password&value=${userpasswordchange.value}&code=${verificationcode.value}&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=infoUpdate&key=password&value=${userpasswordchange.value}&code=${verificationcode.value}&token=${GetCookie('token')}`)
 .then(function(Response){
   const ResponseCode = GetStatusCode(Response);
   if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -231,7 +231,7 @@ axios.get(`/api?type=infoUpdate&key=password&value=${userpasswordchange.value}&c
 })
 }
 const changeuseremail = () => {
-axios.get(`/api?type=infoUpdate&key=email&value=${useremailchange.value}&code=${verificationcode.value}&code2=${verificationcodenew.value}&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=infoUpdate&key=email&value=${useremailchange.value}&code=${verificationcode.value}&code2=${verificationcodenew.value}&token=${GetCookie('token')}`)
 .then(function(Response){
   const ResponseCode = GetStatusCode(Response);
   if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -267,7 +267,7 @@ const getcode = () => {
     let time = 60;
     const loginContainerInstance = document.getElementById("regBox");
     const loadingInstance = ElLoading.service({target: loginContainerInstance, text: "少女祈祷中..", background: 'rgba(0, 0, 0, 0.7)',});
-    axios.get(`/api?type=verification&email=${email.value}&key=infoUpdate`)
+    axios.get(`https://panel.mossfrp.top/api?type=verification&email=${email.value}&key=infoUpdate`)
       .then(function(Response){
           loadingInstance.close();
           const ResponseCode = GetStatusCode(Response)
@@ -307,7 +307,7 @@ const getcodenew = () => {
     let time = 60;
     const loginContainerInstance = document.getElementById("regBox");
     const loadingInstance = ElLoading.service({target: loginContainerInstance, text: "少女祈祷中..", background: 'rgba(0, 0, 0, 0.7)',});
-    axios.get(`/api?type=verification&email=${useremailchange.value}&key=infoUpdate`)
+    axios.get(`https://panel.mossfrp.top/api?type=verification&email=${useremailchange.value}&key=infoUpdate`)
       .then(function(Response){
           loadingInstance.close();
           const ResponseCode = GetStatusCode(Response)
@@ -350,7 +350,7 @@ ElMessageBox.confirm('确认退出登录？','退出登录')
 })
 }
 
-axios.get(`/api?type=userInfo&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=userInfo&token=${GetCookie('token')}`)
 .then(function(Response){
   const ResponseCode = GetStatusCode(Response);
   if (isPassedVerifictionInt(ResponseCode,200) == true){

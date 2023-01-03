@@ -17,7 +17,7 @@
         background-size: cover;
         background-position: center;
         position: relative;
-        background-image: url("https://api.lazy.ink/img");
+        background-image: url("https:/https://panel.mossfrp.top/api.lazy.ink/img");
     }
     .left-float{
         float: left
@@ -77,7 +77,7 @@ const LoginButtonClicked = () => {
     }else{
         const loginContainerInstance = document.getElementById("loginBox");
         const loadingInstance = ElLoading.service({target: loginContainerInstance, text: "少女祈祷中...",  background: 'rgba(0, 0, 0, 0.7)',});
-        axios.get(`/api?type=login&loginType=email&account=${userName.value}&password=${passWord.value}`)
+        axios.get(`https://panel.mossfrp.top/api?type=login&loginType=email&account=${userName.value}&password=${passWord.value}`)
         .then(function(Response){
             loadingInstance.close();
             const ResponseCode = GetStatusCode(Response)

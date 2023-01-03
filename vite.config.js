@@ -12,8 +12,8 @@ export default defineConfig({
   })],
   server: {
     proxy: {
-      "/api": {
-        target: 'http://public.ghs.wiki:7001/API',
+      "https://panel.mossfrp.top/api": {
+        target: 'http://public.ghs.wiki:7001https://panel.mossfrp.top/api',
         changeOrigin: true,
         secure: false,
         headers: {                  

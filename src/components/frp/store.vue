@@ -57,7 +57,7 @@ const logout = () => {
   })
 }
 
-axios.get(`/api?type=userInfo&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=userInfo&token=${GetCookie('token')}`)
 .then(function(Response){
     const ResponseCode = GetStatusCode(Response);
     if (isPassedVerifictionInt(ResponseCode,200) == true){

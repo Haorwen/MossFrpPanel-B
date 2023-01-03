@@ -46,7 +46,7 @@ import { showFailToast, showSuccessToast, showLoadingToast } from 'vant';
         showFailToast('用户名或密码不可为空噢！🙅‍♂️')
     }else{
         showLoadingToast({ message: '少女祈祷中...', forbidClick: true })
-        axios.get(`/api?type=login&loginType=QQ&account=${qq.value}&password=${password.value}`)
+        axios.get(`https://panel.mossfrp.top/api?type=login&loginType=QQ&account=${qq.value}&password=${password.value}`)
         .then(function(Response){
             const ResponseCode = GetStatusCode(Response)
             if (isPassedVerifictionInt(ResponseCode,200) == true){

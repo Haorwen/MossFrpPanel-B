@@ -19,7 +19,7 @@
         background-size: cover;
         background-position: center;
         position: relative;
-        background-image: url("https://api.lazy.ink/img");
+        background-image: url("https:/https://panel.mossfrp.top/api.lazy.ink/img");
 }
   .left-float{
       float: left
@@ -114,7 +114,7 @@ const getCode = () => {
     let time = 60;
     const loginContainerInstance = document.getElementById("regBox");
     const loadingInstance = ElLoading.service({target: loginContainerInstance, text: "少女祈祷中..", background: 'rgba(0, 0, 0, 0.7)',});
-    axios.get(`/api?type=verification&email=${eMail.value}&key=register`)
+    axios.get(`https://panel.mossfrp.top/api?type=verification&email=${eMail.value}&key=register`)
       .then(function(Response){
           loadingInstance.close();
           const ResponseCode = GetStatusCode(Response)
@@ -160,7 +160,7 @@ const RegButtonClicked = () => {
   }else{
       const loginContainerInstance = document.getElementById("regBox");
       const loadingInstance = ElLoading.service({target: loginContainerInstance, text: "少女祈祷中..", background: 'rgba(0, 0, 0, 0.7)'});
-      axios.get(`/api?type=register&email=${eMail.value}&username=${userName.value}&code=${verification.value}&password=${passWord.value}`)
+      axios.get(`https://panel.mossfrp.top/api?type=register&email=${eMail.value}&username=${userName.value}&code=${verification.value}&password=${passWord.value}`)
       .then(function(Response){
           loadingInstance.close();
           const ResponseCode = GetStatusCode(Response)

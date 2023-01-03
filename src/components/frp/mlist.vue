@@ -50,7 +50,7 @@ const logout = () => {
   })
 }
 
-axios.get(`/api?type=userInfo&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=userInfo&token=${GetCookie('token')}`)
 .then(function(Response){
     const ResponseCode = GetStatusCode(Response);
     if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -65,7 +65,7 @@ axios.get(`/api?type=userInfo&token=${GetCookie('token')}`)
     }
 })
 
-axios.get(`/api?type=allNode&token=${GetCookie('token')}&getAsList=true`)
+axios.get(`https://panel.mossfrp.top/api?type=allNode&token=${GetCookie('token')}&getAsList=true`)
 .then(function(Response){
     const ResponseCode = GetStatusCode(Response);
     if (isPassedVerifictionInt(ResponseCode,200) == true){

@@ -110,7 +110,7 @@ if (a.value == "" || band.value == ""){
   ElMessage.warning('节点或带宽不能为空')
 }else{
   isCreating.value = ref(true)
-  axios.get(`/api?type=createCode&token=${GetCookie('token')}&node=${a.value}&date=${time.value}&band=${band.value}`)
+  axios.get(`https://panel.mossfrp.top/api?type=createCode&token=${GetCookie('token')}&node=${a.value}&date=${time.value}&band=${band.value}`)
   .then(function(Response){
     const ResponseCode = GetStatusCode(Response);
     if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -146,7 +146,7 @@ if (a.value == "" || band.value == ""){
   })
 }
 }
-axios.get(`/api?type=allNode&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=allNode&token=${GetCookie('token')}`)
 .then(function(Response){
   const ResponseCode = GetStatusCode(Response);
     if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -171,7 +171,7 @@ axios.get(`/api?type=allNode&token=${GetCookie('token')}`)
         }
     }
 })
-axios.get(`/api?type=userInfo&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=userInfo&token=${GetCookie('token')}`)
 .then(function(Response){
   const ResponseCode = GetStatusCode(Response);
   if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -200,7 +200,7 @@ ElMessageBox.confirm(
     cancelButtonText: '不',
     callback: (action: Action) => {
     if (action == "confirm"){
-      axios.get(`/api?type=removeCode&token=${GetCookie('token')}&node=${val['node']}&number=${val['number']}`)
+      axios.get(`https://panel.mossfrp.top/api?type=removeCode&token=${GetCookie('token')}&node=${val['node']}&number=${val['number']}`)
       .then(function(Response){
         const ResponseCode = GetStatusCode(Response);
         if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -234,7 +234,7 @@ confirmButtonText: '确定',
   cancelButtonText: '取消',
 })
 .then(({ value }) => {
-  axios.get(`/api?type=dateCode&token=${GetCookie('token')}&node=${val['node']}&number=${val['number']}&date=${value}`)
+  axios.get(`https://panel.mossfrp.top/api?type=dateCode&token=${GetCookie('token')}&node=${val['node']}&number=${val['number']}&date=${value}`)
       .then(function(Response){
         const ResponseCode = GetStatusCode(Response);
         if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -262,7 +262,7 @@ const bandCode = (index: number) => {
 var val = tableData.value[index];
 ElMessageBox.prompt(`为编号为 ${val['node']}-${val['number']} 的穿透码升配，在下方输入增加的带宽（Mbps）**注意不是增加到的带宽，是增加的带宽**`,'升配穿透码')
 .then(({ value }) => {
-  axios.get(`/api?type=bandCode&token=${GetCookie('token')}&node=${val['node']}&number=${val['number']}&band=${value}`)
+  axios.get(`https://panel.mossfrp.top/api?type=bandCode&token=${GetCookie('token')}&node=${val['node']}&number=${val['number']}&band=${value}`)
       .then(function(Response){
         const ResponseCode = GetStatusCode(Response);
         if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -284,7 +284,7 @@ ElMessageBox.prompt(`为编号为 ${val['node']}-${val['number']} 的穿透码�
 })
 }
 
-axios.get(`/api?type=userInfo&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=userInfo&token=${GetCookie('token')}`)
 .then(function(Response){
   const ResponseCode = GetStatusCode(Response);
   if (isPassedVerifictionInt(ResponseCode,200) == true){
@@ -304,7 +304,7 @@ axios.get(`/api?type=userInfo&token=${GetCookie('token')}`)
   }
 })
 
-axios.get(`/api?type=userCode&token=${GetCookie('token')}`)
+axios.get(`https://panel.mossfrp.top/api?type=userCode&token=${GetCookie('token')}`)
 .then(function(Response){
 const ResponseCode = GetStatusCode(Response);
   if (isPassedVerifictionInt(ResponseCode,200) == true){
